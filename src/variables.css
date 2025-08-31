@@ -1,0 +1,6 @@
+:root {
+    --semantic-bg-neutral-secondary: rgba(44, 45, 48, 0.08);
+    --semantic-fg-disabled: rgba(163, 166, 172, 0.48);
+    --semantic-fg-primary: #161719;
+    --semantic-bg-neutral-inverse: #E6E7E9;
+}
