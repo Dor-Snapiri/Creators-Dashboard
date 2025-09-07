@@ -44,9 +44,3 @@ export default function Button(props: ButtonProps) {
         </button>
     );
 }
-
-
-
-<Button composition='dgh' text='asdadsa'>
-    ajsdjbadkjlbasjb
-</Button>
