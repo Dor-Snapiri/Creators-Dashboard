@@ -1,0 +1,180 @@
+@import '../fonts.scss';
+
+.ltButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 999px;
+    border: 0;
+
+    // ---------- Set button size, gap and padding according to data-size and data-composition ----------
+    &[data-size='small'] {
+        --size: 32px;
+        gap: 4px;
+
+        &[data-composition='text'] {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        &[data-composition='iconFirst'] {
+            padding-left: 6px;
+            padding-right: 12px;
+        }
+
+        &[data-composition='textFirst'] {
+            padding-left: 12px;
+            padding-right: 6px;
+        }
+    }
+
+    &[data-size='medium'] {
+        --size: 40px;
+        gap: 6px;
+
+        &[data-composition='text'] {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        &[data-composition='iconFirst'] {
+            padding-left: 8px;
+            padding-right: 16px;
+        }
+
+        &[data-composition='textFirst'] {
+            padding-left: 16px;
+            padding-right: 8px;
+        }
+    }
+
+    &[data-size='large'] {
+        --size: 48px;
+        gap: 8px;
+
+        &[data-composition='text'] {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        &[data-composition='iconFirst'] {
+            padding-left: 12px;
+            padding-right: 20px;
+        }
+
+        &[data-composition='textFirst'] {
+            padding-left: 20px;
+            padding-right: 12px;
+        }
+    }
+
+    // Make icon-only buttons square
+    height: var(--size);
+
+    &[data-composition='icon'] {
+        width: var(--size);
+    }
+
+    // Set top and bottom padding (unless composition is icon)
+    &[data-composition='icon'] {
+        padding: calc((var(--size) - 24px) / 2);
+    }
+
+    &:not([data-composition='icon']) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    // ---------- Apply font styles from $labelFont map based on button size (small->sm, medium->md, large->lg) ----------
+    @each $size, $fontSize in ('small': sm, 'medium': md, 'large': lg) {
+        &[data-size='#{$size}'] {
+            $specs: map-get($labelFont, $fontSize);
+
+            font-family: map-get($specs, font-family);
+            font-size: map-get($specs, font-size);
+            font-style: map-get($specs, font-style);
+            font-weight: map-get($specs, font-weight);
+            line-height: map-get($specs, line-height);
+            letter-spacing: map-get($specs, letter-spacing);
+        }
+    }
+
+
+    // ---------- Apply color according to data-mode ----------
+    // Filled mode
+    &[data-mode='filled'] {
+        background-color: var(--semantic-bg-neutral, #2C2D30);
+        color: var(--semantic-fg-neutral-secondary, #E6E7E9);
+
+        &:hover {
+            background-color: #3E3F42;
+        }
+
+        &:active,
+        &:pressed {
+            background-color: #494A4D;
+        }
+
+        svg {
+            fill: var(--semantic-fg-inverse, #FCFCFD);
+        }
+    }
+
+    // Tinted mode
+    &[data-mode='tinted'] {
+        background-color: var(--semantic-bg-neutral-secondary, rgba(44, 45, 48, 0.08));
+        color: var(--comp-button-fg-neutral-secondary, #2C2D30);
+
+        &:hover {
+            background-color: rgba(42, 43, 46, 0.19);
+        }
+
+        &:active,
+        &:pressed {
+            background-color: rgba(41, 42, 45, 0.23);
+        }
+
+        svg {
+            fill: var(--semantic-bg-inverse, #161719);
+        }
+    }
+
+    // Plain mode
+    &[data-mode='plain'] {
+        background-color: var(--semantic-bg-transparent, rgba(255, 255, 255, 0.00));
+        color: var(--comp-button-fg-neutral-secondary, #2C2D30);
+
+        &:hover {
+            background-color: rgba(208, 209, 209, 0.20);
+        }
+
+        &:active,
+        &:pressed {
+            background-color: rgba(186, 186, 187, 0.30);
+        }
+
+        svg {
+            fill: var(--semantic-bg-inverse, #161719);
+        }
+    }
+
+    // Elevated mode
+    &[data-mode='elevated'] {
+        background-color: var(--semantic-bg-secondary, #FFF);
+        color: var(--comp-button-fg-neutral-secondary, #2C2D30);
+
+        &:hover {
+            background-color: var(--comp-button-bg-neutral-elevated-hover, #F4F4F4);
+        }
+
+        &:active,
+        &:pressed {
+            background-color: var(--comp-button-bg-neutral-elevated-pressed, #EAEAEA);
+        }
+
+        svg {
+            fill: var(--semantic-bg-inverse, #161719);
+        }
+    }
+}
