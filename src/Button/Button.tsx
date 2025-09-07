@@ -1,29 +1,40 @@
 import './Button.scss'
-import type { ReactNode } from 'react'
-import PlaceholderIcon from '../assets/Placeholder.svg?react'
+
 
 type ButtonProps = {
     mode?: 'filled' | 'tinted' | 'plain' | 'elevated';
     size?: 'small' | 'medium' | 'large';
-    icon?: React.ReactElement<SVGSVGElement>;
-    composition: 'text' | 'icon' | 'iconFirst' | 'textFirst';
-    children?: ReactNode;
     onClick?: () => void
-}
+} & (
+        | {
+            composition: 'text';
+            text: string;
 
-export default function Button({ mode = 'tinted', size = 'medium', icon = <PlaceholderIcon />, composition = 'text', children, onClick }: ButtonProps) {
+        }
+        | {
+            composition: 'icon';
+            icon: React.ReactElement<SVGSVGElement>;
+        }
+        | {
+            composition: 'iconFirst' | 'textFirst';
+            text: string;
+            icon: React.ReactElement<SVGSVGElement>;
+        }
+    )
 
-    // Handle icon and text rendering based on composition
+export default function Button(props: ButtonProps) {
+    const { mode = 'tinted', size = 'medium', onClick, composition } = props;
+
     function renderContent() {
         switch (composition) {
             case 'icon':
-                return icon;
+                return props.icon;
             case 'text':
-                return children;
+                return props.text;
             case 'iconFirst':
-                return <>{icon}<span>{children}</span></>;
+                return <>{props.icon}<span>{props.text}</span></>;
             case 'textFirst':
-                return <><span>{children}</span>{icon}</>;
+                return <><span>{props.text}</span>{props.icon}</>;
         }
     };
 
@@ -33,3 +44,9 @@ export default function Button({ mode = 'tinted', size = 'medium', icon = <Place
         </button>
     );
 }
+
+
+
+<Button composition='dgh' text='asdadsa'>
+    ajsdjbadkjlbasjb
+</Button>
