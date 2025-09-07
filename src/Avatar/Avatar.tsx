@@ -3,7 +3,7 @@ import AvatarIcon from '../assets/defaultAvatarIcon.svg?react'
 
 
 type Size = 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-type AavatarConfig =
+export type AavatarConfig =
     | { type: 'image'; url: string }
     | { type: 'initials'; firstName: string; lastName: string }
     | { type: 'icon' };
