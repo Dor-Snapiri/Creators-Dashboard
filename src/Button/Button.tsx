@@ -43,4 +43,3 @@ export default function Button(props: ButtonProps) {
             {renderContent()}
         </button>
     );
-}
