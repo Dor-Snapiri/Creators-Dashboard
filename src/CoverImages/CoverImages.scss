@@ -1,0 +1,26 @@
+.images {
+    position: relative;
+    display: flex;
+    height: 200px;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.imageFrame {
+    flex: 1 0 0;
+    align-self: stretch;
+    border-right: 1px solid var(--semantic-bg-white, #FFF);
+    background-color: var(--semantic-bg-neutral-inverse, #E6E7E9);
+    background-size: cover;
+    background-position: center;
+}
+
+.avatarWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(70%);
+}

@@ -1,0 +1,43 @@
+@import '../fonts.scss';
+
+.detailsContainer {
+    display: flex;
+    padding: 56px 24px 0 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.boldDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+}
+
+.nameContainer {
+    color: var(--semantic-fg-primary, #161719);
+    text-align: center;
+
+    @include applyFont(map-get($headlineFont, md));
+}
+
+.ageLocationContainer {
+    color: var(--semantic-fg-primary, #161719);
+    text-align: center;
+
+    @include applyFont(map-get($bodyFont, sm));
+}
+
+.emailContainer {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+    color: var(--semantic-fg-secondary, #7A7C81);
+    text-align: center;
+    text-overflow: ellipsis;
+}
