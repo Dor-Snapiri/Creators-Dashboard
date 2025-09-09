@@ -1,0 +1,86 @@
+.toggle {
+    display: flex;
+    width: 58px;
+    padding: 4px;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 999px;
+    border: 1px solid var(--semantic-bg-neutral-inverse, #E6E7E9);
+    background: var(--semantic-bg-secondary, #FFF);
+}
+
+.iconContainer {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 100px;
+
+}
+
+.toggleList {
+    .list {
+        background-color: var(--semantic-bg-tertiary, #F3F4F6);
+    }
+
+    .grid {
+        background-color: transparent;
+    }
+}
+
+.toggleGrid {
+    .grid {
+        background-color: var(--semantic-bg-tertiary, #F3F4F6);
+    }
+
+    .list {
+        background-color: transparent;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .toggle {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        padding: 4px;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        flex-shrink: 0;
+        border-radius: 999px;
+        border: 1px solid var(--semantic-bg-neutral-inverse, #E6E7E9);
+        background: var(--semantic-bg-secondary, #FFF);
+
+        &:active {
+            background-color: var(--semantic-bg-tertiary, #F3F4F6);
+        }
+    }
+
+    .toggleList {
+        .list {
+            display: block;
+            background: transparent;
+        }
+
+        .grid {
+            display: none;
+        }
+    }
+
+    .toggleGrid {
+        .grid {
+            display: block;
+            background: transparent;
+        }
+
+        .list {
+            display: none;
+        }
+    }
+
+}
