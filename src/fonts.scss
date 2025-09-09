@@ -1,3 +1,12 @@
+@mixin applyFont($font) {
+    font-family: map-get($font, font-family);
+    font-size: map-get($font, font-size);
+    font-style: map-get($font, font-style);
+    font-weight: map-get($font, font-weight);
+    line-height: map-get($font, line-height);
+    letter-spacing: map-get($font, letter-spacing);
+}
+
 $labelFont : (sm: (font-family: "Brown LL",
         font-size: 14px,
         font-style: normal,
@@ -18,3 +27,20 @@ $labelFont : (sm: (font-family: "Brown LL",
         font-weight: 500,
         line-height: 20px,
         letter-spacing: -0.5px));
+
+$bodyFont : (sm: (font-family: "Brown LL",
+        font-size: 12px,
+        font-style: normal,
+        font-weight: 400,
+        line-height: 16px,
+        letter-spacing: -0.25px,
+    ));
+
+$headlineFont: (
+    md: (font-family: "Brown LL",
+        font-size: 18px,
+        font-style: normal,
+        font-weight: 700,
+        line-height: 24px,
+        letter-spacing: -0.5px)
+);
