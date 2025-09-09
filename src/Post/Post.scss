@@ -6,6 +6,12 @@
     gap: 8px;
 }
 
+.post img {
+    width: '100%';
+    height: '100%';
+    object-fit: 'cover';
+}
+
 .commentContainer {
     width: 100%;
 }
