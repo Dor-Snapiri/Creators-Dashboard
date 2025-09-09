@@ -1,0 +1,79 @@
+form {
+    display: flex;
+    width: 400px;
+    max-width: 476px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: var(--Semantic-Light-Background-bg-Alpha, rgba(0, 0, 0, 0.04));
+}
+
+.inputContainer {
+    display: flex;
+    padding: 10px 12px;
+    height: 40px;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+
+
+    input {
+        flex: 1 0 0;
+        height: 100%;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+
+
+        /* beta/body/md */
+        font-family: "Brown LL";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        /* 128.571% */
+        letter-spacing: -0.25px;
+
+        color: var(--semantic-fg-primary, #161719);
+
+        &::placeholder {
+            color: var(--semantic-fg-tertiary, #D0D1D3);
+        }
+
+        &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+            caret-color: var(--semantic-fg-brand, #2B9BF0);
+        }
+    }
+
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--Semantic-Dark-Foreground-fg-Secondary, #A3A6AC);
+    }
+}
+
+
+.clearButton {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: transparent;
+    border: 0;
+
+    svg {
+        display: flex;
+        width: 28px;
+        height: 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+
+}
