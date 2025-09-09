@@ -1,24 +1,22 @@
-import Avatar from "../Avatar/Avatar";
 import "./Row.scss";
 
+type CellData = string | React.ReactNode;
+
 type RowProps = {
-    name: { firstName: string; lastName: string };
-    age: number;
-    email: string;
-    city: string;
-    state: string;
+    // ordered left to right
+    firstCell: CellData;
+    secondCell: CellData;
+    thirdCell: CellData;
+    fourthCell: CellData;
 }
 
-export default function Row({ name, age, email, city, state }: RowProps) {
+export default function Row({ firstCell, secondCell, thirdCell, fourthCell }: RowProps) {
     return (
         <tr className="row">
-            <td className="cell">
-                <Avatar config={{ type: 'icon' }} size='sm' />
-                {name.firstName} {name.lastName}
-            </td>
-            <td className="cell">{email}</td>
-            <td className="cell">{age}</td>
-            <td className="cell">{city}, {state}</td>
+            <td className="cell">{firstCell}</td>
+            <td className="cell">{secondCell}</td>
+            <td className="cell">{thirdCell}</td>
+            <td className="cell">{fourthCell}</td>
         </tr>
     )
 }
