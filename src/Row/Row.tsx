@@ -1,8 +1,8 @@
 import "./Row.scss";
 
-type CellData = string | React.ReactNode;
+export type CellData = string | React.ReactNode;
 
-type RowProps = {
+export type RowProps = {
     // ordered left to right
     firstCell: CellData;
     secondCell: CellData;
