@@ -1,23 +1,23 @@
 import './Toggle.scss'
-import { useState } from "react"
-import GridViewIcon from '../assets/gridViewIcon.svg?react';
-import ListViewIcon from '../assets/listViewIcon.svg?react';
+import { type ReactNode } from "react"
 
-type ToggleState = 'grid' | 'list';
+type ToggleProps = {
+    state: boolean;
+    setState: (state: boolean) => void;
+    trueIcon: ReactNode;
+    falseIcon: ReactNode;
+}
 
 
-export default function Toggle() {
-    const [toggleState, setToggleState] = useState<ToggleState>('grid');
-
-    const handleToggle = () => setToggleState((toggleState === 'grid') ? 'list' : 'grid');
+export default function Toggle({ state, setState, trueIcon, falseIcon }: ToggleProps) {
 
     return (
-        <button onClick={handleToggle} className={'toggle toggle' + ((toggleState === 'grid') ? 'Grid' : 'List')}>
-            <div className='iconContainer grid'>
-                <GridViewIcon />
+        <button onClick={() => setState(!state)} className={'toggle ' + (state ? 'toggleTrue' : 'toggleFalse')}>
+            <div className='iconContainer falseIcon'>
+                {falseIcon}
             </div>
-            <div className='iconContainer list'>
-                <ListViewIcon />
+            <div className='iconContainer trueIcon'>
+                {trueIcon}
             </div>
 
         </button>

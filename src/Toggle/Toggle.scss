@@ -21,22 +21,22 @@
 
 }
 
-.toggleList {
-    .list {
+.toggleTrue {
+    .trueIcon {
         background-color: var(--semantic-bg-tertiary, #F3F4F6);
     }
 
-    .grid {
+    .falseIcon {
         background-color: transparent;
     }
 }
 
-.toggleGrid {
-    .grid {
+.toggleFalse {
+    .falseIcon {
         background-color: var(--semantic-bg-tertiary, #F3F4F6);
     }
 
-    .list {
+    .trueIcon {
         background-color: transparent;
     }
 }
@@ -61,24 +61,24 @@
         }
     }
 
-    .toggleList {
-        .list {
+    .toggleTrue {
+        .trueIcon {
             display: block;
             background: transparent;
         }
 
-        .grid {
+        .falseIcon {
             display: none;
         }
     }
 
-    .toggleGrid {
-        .grid {
+    .toggleFalse {
+        .falseIcon {
             display: block;
             background: transparent;
         }
 
-        .list {
+        .trueIcon {
             display: none;
         }
     }
