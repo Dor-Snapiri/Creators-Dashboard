@@ -1,0 +1,62 @@
+// Import the base toggle styles
+@import '../Toggle/Toggle.scss';
+
+.viewToggle {
+    // Inherit all toggle styles
+    @extend .toggle;
+}
+
+// Add any view-specific styles here if needed
+.viewToggleList {
+    @extend .toggleTrue;
+
+    .listIcon {
+        background-color: var(--semantic-bg-tertiary, #F3F4F6);
+    }
+
+    .gridIcon {
+        background-color: transparent;
+    }
+}
+
+.viewToggleGrid {
+    @extend .toggleFalse;
+
+    .gridIcon {
+        background-color: var(--semantic-bg-tertiary, #F3F4F6);
+    }
+
+    .listIcon {
+        background-color: transparent;
+    }
+}
+
+@media (max-width: 600px) {
+    .viewToggle {
+        // Inherit all toggle styles
+        @extend .toggle;
+    }
+
+    .viewToggleList {
+        .listIcon {
+            display: block;
+            background: transparent;
+        }
+
+        .gridIcon {
+            display: none;
+        }
+    }
+
+    .viewToggleGrid {
+        .gridIcon {
+            display: block;
+            background: transparent;
+        }
+
+        .listIcon {
+            display: none;
+        }
+    }
+
+}
