@@ -1,16 +1,20 @@
 .row {
     display: flex;
-    max-width: 1203px;
     height: 52px;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--semantic-fg-neutral-secondary, #E6E7E9);
     background: var(--semantic-bg-secondary, #FFF);
+
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(44, 45, 48, 0.04);
+    }
 }
 
 .cell {
     display: flex;
-    min-width: 224px;
     padding-right: 24px;
     align-items: flex-start;
     flex: 1 0 0;
