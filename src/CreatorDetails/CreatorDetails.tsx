@@ -8,9 +8,10 @@ export type CreatorDetailsProps = {
     city: string;
     state: string;
     email: string;
+    detailButtonOnClick?: () => void;
 }
 
-export default function CreatorDetails({ firstName, lastName, age, city, state, email }: CreatorDetailsProps) {
+export default function CreatorDetails({ firstName, lastName, age, city, state, email, detailButtonOnClick = () => { } }: CreatorDetailsProps) {
 
     return (
         <div className="detailsContainer">
@@ -21,7 +22,7 @@ export default function CreatorDetails({ firstName, lastName, age, city, state, 
 
             <div className="emailContainer">{email}</div>
 
-            <Button composition="text" text="Details" />
+            <Button composition="text" text="Details" onClick={detailButtonOnClick} />
         </div>
     );
 }
