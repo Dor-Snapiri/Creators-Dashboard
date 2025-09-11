@@ -5,10 +5,10 @@ import CloseIcon from '../assets/closeIcon.svg?react'
 
 type SearchFieldProps = {
     placeholder?: string;
-    onChange: (value: string) => void;
+    onChange?: (value: string) => void;
 };
 
-export default function SearchField({ placeholder = "Search", onChange }: SearchFieldProps) {
+export default function SearchField({ placeholder = "Search", onChange = () => { } }: SearchFieldProps) {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
