@@ -7,6 +7,7 @@
     align-self: stretch;
     border-radius: 999px;
     border: 0;
+    cursor: pointer;
 
     // ---------- Set button size, gap and padding according to data-size and data-composition ----------
     &[data-size='small'] {

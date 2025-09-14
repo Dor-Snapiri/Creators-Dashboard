@@ -2,7 +2,12 @@ import Row from "./Row";
 import { type CreatorDetailsProps } from "../CreatorDetails/CreatorDetails";
 import Avatar from "../Avatar/Avatar";
 
-export default function UserRow(props: CreatorDetailsProps) {
+type UserRowProps = (
+    & Omit<CreatorDetailsProps, 'detailButtonOnClick'>
+    & { onClick?: () => void }
+);
+
+export default function UserRow(props: UserRowProps) {
     return (
         <Row
             firstCell={
@@ -14,6 +19,7 @@ export default function UserRow(props: CreatorDetailsProps) {
             secondCell={props.email}
             thirdCell={props.age}
             fourthCell={`${props.city}, ${props.state}`}
+            onClick={props.onClick}
         />
     )
 }

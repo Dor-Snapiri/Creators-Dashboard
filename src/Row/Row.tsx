@@ -8,11 +8,12 @@ export type RowProps = {
     secondCell: CellData;
     thirdCell: CellData;
     fourthCell: CellData;
+    onClick?: () => void;
 }
 
-export default function Row({ firstCell, secondCell, thirdCell, fourthCell }: RowProps) {
+export default function Row({ firstCell, secondCell, thirdCell, fourthCell, onClick = () => { } }: RowProps) {
     return (
-        <tr className="row">
+        <tr className="row" onClick={onClick}>
             <td className="cell">{firstCell}</td>
             <td className="cell">{secondCell}</td>
             <td className="cell">{thirdCell}</td>
